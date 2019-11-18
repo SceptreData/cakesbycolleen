@@ -1,4 +1,40 @@
 ---
 label: Cake Types
 hide_body: true
-fields: []
+fields:
+- name: cake_type
+  type: field_group_list
+  fields:
+  - name: cake_name
+    type: text
+    config:
+      required: false
+    label: Cake Name
+    description: What type of cake is this?
+  - name: price_info
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Pricing Information
+    description: 'This text will be bolded. Example: Tiered Fondant Wedding Cakes
+      Start at $11/Serving'
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Description
+    description: What makes this cake special?
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Cake Category
+  description: What type of cake is this?
