@@ -13,10 +13,11 @@ export default function useBlogData() {
               title
               hero_image {
                 childImageSharp {
-                  fluid( maxWidth: 800 ) {
+                  fluid(maxWidth: 800) {
                     ...GatsbyImageSharpFluid
                   }
                 }
+                publicURL
               }
             }
             excerpt(pruneLength: 200)

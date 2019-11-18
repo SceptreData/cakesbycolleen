@@ -10,11 +10,44 @@ module.exports = {
     about: config.about,
     contact: config.contact,
     primaryColor: config.primary_color,
-    infoData: infoData
+    infoData: infoData,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "uploads",
+        path: `${__dirname}/content/uploads`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaultQuality: 75,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-normalize-paths",
+            options: { pathFields: ["cover"] },
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1000,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+
     "gatsby-plugin-sass",
-    "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-yaml",
     {
@@ -28,44 +61,14 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/posts`
-      }
+        path: `${__dirname}/content/posts`,
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "data",
         path: `${__dirname}/content/data`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "images",
-        path: `${__dirname}/content/images`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-sharp", 
-      options: {
-        defaultQuality: 75
-      }
-    },
-    `gatsby-transformer-sharp`,
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          "gatsby-remark-relative-images",
-          "gatsby-remark-normalize-paths",
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 1000,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
       },
     },
   ],
