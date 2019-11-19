@@ -1,6 +1,6 @@
 ---
 date: 2019-11-19T00:14:56.000+00:00
-hero_image: "/content/uploads/max-di-capua-AhHICglxxx8-unsplash.jpg"
+hero_image: "/content/uploads/IMG_20181029_124335_944_edited.jpg"
 title: Cakes, and the David who loves them.
 author: Robert Thoreau
 cake_type: Birthday Cake
