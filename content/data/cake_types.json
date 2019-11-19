@@ -1,1 +1,6 @@
-{}
+[
+  {"cake_name":"wedding cake",
+  "description": "It's for weddings",
+  "price_info": "It's very expensive."
+  }
+]
