@@ -34,7 +34,7 @@ module.exports = {
           "gatsby-remark-relative-images",
           {
             resolve: "gatsby-remark-normalize-paths",
-            options: { pathFields: ["cover"] },
+            options: { pathFields: ["image", "cover"] },
           },
           {
             resolve: "gatsby-remark-images",
