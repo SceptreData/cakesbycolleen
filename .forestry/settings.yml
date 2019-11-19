@@ -6,9 +6,6 @@ webhook_url:
 sections:
 - type: heading
   label: Content
-- type: document
-  path: content/data/cake_types.json
-  label: Cake Types
 - type: directory
   path: content/posts
   label: Blog Posts
@@ -25,6 +22,9 @@ sections:
   label: Info Page
 - type: heading
   label: Site Config
+- type: document
+  path: content/data/cake_types.json
+  label: Cake Types
 - type: document
   path: config.json
   label: Site Info
