@@ -5,19 +5,18 @@ fields:
 - type: text
   name: title
   label: title
-- name: author
+- name: cake_type
   type: select
-  default: ''
+  default: []
   config:
-    required: true
+    required: false
     options: []
     source:
       type: documents
-      section: author-list
-      file: content/data/authors.yaml
-      path: authors
-  label: author
-  description: Enter author of post
+      section: ''
+      file: content/data/cake_types.json
+      path: 
+  label: Cake Type
 - name: date
   type: datetime
   label: date
