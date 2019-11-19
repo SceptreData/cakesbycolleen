@@ -12,10 +12,10 @@ fields:
     required: false
     options: []
     source:
-      type: pages
-      section: cake-types
-      file: content/data/cake_types.json
-      path: 
+      type: documents
+      section: ''
+      file: content/data/cakes.yaml
+      path: cakes
   label: Cake Type
 - name: date
   type: datetime
