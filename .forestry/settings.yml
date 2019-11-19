@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/data/cakes.yaml
   label: Cake Types
-  match: "**/*"
 - type: heading
   label: Content
 - type: directory
