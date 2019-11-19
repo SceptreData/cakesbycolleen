@@ -4,9 +4,6 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
-- type: document
-  path: content/data/cakes.yaml
-  label: Cake Types
 - type: heading
   label: Content
 - type: directory
@@ -22,6 +19,9 @@ sections:
   label: Info Page
 - type: heading
   label: Site Config
+- type: document
+  path: content/data/cakes.yaml
+  label: Cake Types
 - type: document
   path: content/data/cake_types.json
   label: Cake Information
