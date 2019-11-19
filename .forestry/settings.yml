@@ -21,7 +21,7 @@ sections:
   label: Site Config
 - type: document
   path: content/data/cake_types.json
-  label: Cake Types
+  label: Cake Information
 - type: document
   path: config.json
   label: Site Info
