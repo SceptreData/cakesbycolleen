@@ -1,10 +1,10 @@
 {
-  "name": "foresry-starter-blog-gatsby",
+  "name": "cakesbycolleen",
   "private": true,
-  "description": "A simple starter blog to get up and developing quickly with Forestry & Gatsby",
+  "description": "A simple Blog + order page for Colleenj",
   "license": "MIT",
   "version": "0.1.0",
-  "author": "kendall strautman",
+  "author": "David Bergeron",
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -o",
@@ -31,7 +31,8 @@
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "typeface-raleway": "0.0.75"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
