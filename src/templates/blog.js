@@ -34,6 +34,7 @@ export default function Blog(props) {
         <div className={blogTemplateStyles.blog__info}>
           <h1>{data.frontmatter.title}</h1>
           <h3>{data.frontmatter.date}</h3>
+          <h5>{data.frontmatter.cake_type}</h5>
         </div>
         <div
           className={blogTemplateStyles.blog__body}

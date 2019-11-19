@@ -15,18 +15,21 @@ sections:
   templates:
   - blog-post
 - type: document
-  path: content/data/authors.yaml
-  label: Author List
-- type: document
   path: content/data/info.json
   label: Info Page
 - type: heading
-  label: General Config
+  label: Site Config
+- type: document
+  path: content/data/cakes.yaml
+  label: Cake Types
+- type: document
+  path: content/data/cake_types.json
+  label: Cake Information
 - type: document
   path: config.json
   label: Site Info
-upload_dir: content/images
-public_path: "/content/images"
+upload_dir: content/uploads
+public_path: "/content/uploads"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"

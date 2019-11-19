@@ -1,0 +1,26 @@
+---
+label: Cake
+hide_body: false
+fields:
+- name: cake_name
+  type: text
+  config:
+    required: false
+  label: Cake Title
+  description: 'What''s the name of this cake? '
+- name: hero_img
+  type: file
+  config:
+    maxSize: '1'
+  label: Hero Image
+  description: This is the main photo that will be used at the top of the cake article.
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Cake Description
+  description: Tell us a little bit about the cake
