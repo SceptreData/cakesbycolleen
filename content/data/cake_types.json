@@ -1,6 +1,12 @@
 [
-  {"cake_name":"wedding cake",
-  "description": "It's for weddings",
-  "price_info": "It's very expensive."
+  {
+    "cake_name": "Birthday Cake",
+    "description": "Mmmm birthday cake",
+    "price_info": "one million dollars"
+  },
+  {
+    "cake_name": "wedding cake",
+    "description": "It's for weddings",
+    "price_info": "It's very expensive."
   }
 ]
