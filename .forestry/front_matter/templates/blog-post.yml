@@ -13,7 +13,7 @@ fields:
     options: []
     source:
       type: pages
-      section: cake-types-603e3877-8cb7-4c62-9957-840f59311a0a
+      section: cake-types
       file: content/data/cake_types.json
       path: 
   label: Cake Type
