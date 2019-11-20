@@ -14,8 +14,6 @@ module.exports = {
     infoData: infoData,
   },
   plugins: [
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,32 +21,39 @@ module.exports = {
         path: `${__dirname}/content/uploads`,
       },
     },
+    { resolve: `gatsby-plugin-sharp`, options: { defaultQuality: 75 } },
+    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           //   options: { pathFields: ["image", "cover"] }, //   resolve: "gatsby-remark-normalize-paths", // { // "gatsby-remark-relative-images",
           // },
+          `gatsby-remark-relative-images`,
           {
-            resolve: `@forestryio/gatsby-remark-normalize-paths`,
-            options: { pathFields: ["image", "cover", "hero_image"] },
+            resolve: `gatsby-remark-normalize-paths`,
+            options: { pathFields: ["image", "cover"] },
           },
-          // `gatsby-remark-relative-images`,
           {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1000,
-            },
-          },
-          {
-            resolve: "gatsby-remark-copy-linked-files",
-            options: {
-              destinationDir: "content/uploads",
+              linkImagesToOriginal: false,
             },
           },
         ],
       },
     },
+
+    "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: `gatsby-plugin-sass-resources`,
+      options: {
+        resources: [`${__dirname}/src/styles/_vars.scss`],
+      },
+    },
+    "gatsby-transformer-yaml",
 
     {
       resolve: "gatsby-source-filesystem",
@@ -73,56 +78,48 @@ module.exports = {
         path: `${__dirname}/content/data`,
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/img`,
-        name: "images",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     path: `${__dirname}/src/img`,
+    //     name: "images",
+    //   },
+    // },
 
-    "gatsby-plugin-sass",
-    {
-      resolve: `gatsby-plugin-sass-resources`,
-      options: {
-        resources: [`${__dirname}/src/styles/_vars.scss`],
-      },
-    },
-
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Solway`,
-            variants: ["300", "500", "700"],
-            subsets: ["latin"],
-          },
-          {
-            family: `Nanum Myeongjo`,
-            variants: ["400", "700", "800"],
-            subsets: ["latin"],
-          },
-          {
-            family: `Raleway`,
-            variants: ["300", "400", "400i", "500", "600", "600i", "700"],
-            subsets: ["latin"],
-          },
-          {
-            family: `Lora`,
-            variants: ["400", "700"],
-            subsets: ["latin"],
-          },
-          {
-            family: `Frank Ruhl Libre`,
-            variants: ["300", "400", "500", "700", "900"],
-            subsets: ["latin"],
-          },
-        ],
-      },
-    },
-    `gatsby-plugin-nprogress`,
-    `gatsby-plugin-robots-txt`,
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Solway`,
+    //         variants: ["300", "500", "700"],
+    //         subsets: ["latin"],
+    //       },
+    //       {
+    //         family: `Nanum Myeongjo`,
+    //         variants: ["400", "700", "800"],
+    //         subsets: ["latin"],
+    //       },
+    //       {
+    //         family: `Raleway`,
+    //         variants: ["300", "400", "400i", "500", "600", "600i", "700"],
+    //         subsets: ["latin"],
+    //       },
+    //       {
+    //         family: `Lora`,
+    //         variants: ["400", "700"],
+    //         subsets: ["latin"],
+    //       },
+    //       {
+    //         family: `Frank Ruhl Libre`,
+    //         variants: ["300", "400", "500", "700", "900"],
+    //         subsets: ["latin"],
+    //       },
+    //     ],
+    //   },
+    // },
+    // `gatsby-plugin-nprogress`,
+    // `gatsby-plugin-robots-txt`,
 
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
@@ -131,22 +128,20 @@ module.exports = {
     //   },
     // },
 
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Cakes by Colleen`,
-        short_name: `Cakes-Colleen`,
-        start_url: `/`,
-        background_color: `#f7fafc`,
-        theme_color: `#f687b3`,
-        // icon: `src/img/birthday-cake.png`,
-        display: `standalone`,
-        theme_color_in_head: false, // This will avoid adding theme-color meta tag
-      },
-    },
-    `gatsby-plugin-sitemap`,
-    "gatsby-plugin-react-helmet",
-    "gatsby-transformer-yaml",
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Cakes by Colleen`,
+    //     short_name: `Cakes-Colleen`,
+    //     start_url: `/`,
+    //     background_color: `#f7fafc`,
+    //     theme_color: `#f687b3`,
+    //     // icon: `src/img/birthday-cake.png`,
+    //     display: `standalone`,
+    //     theme_color_in_head: false, // This will avoid adding theme-color meta tag
+    //   },
+    // },
+    // `gatsby-plugin-sitemap`,
     // `gatsby-plugin-catch-links`,
     // "gatsby-plugin-offline",
   ],

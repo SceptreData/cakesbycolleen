@@ -27,7 +27,7 @@ export default function Blog(props) {
       <article className={blogTemplateStyles.blog}>
         <figure className={blogTemplateStyles.blog__hero}>
           <Img
-            fluid={data.frontmatter.hero_image.childImageSharp.fluid}
+            fluid={data.frontmatter.hero_img.childImageSharp.fluid}
             alt={data.frontmatter.title}
           />
         </figure>
@@ -75,7 +75,7 @@ export const getPostData = graphql`
         title
         author
         date(formatString: "MMMM Do, YYYY")
-        hero_image {
+        hero_img {
           childImageSharp {
             fluid(maxWidth: 1500) {
               ...GatsbyImageSharpFluid

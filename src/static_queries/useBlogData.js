@@ -12,7 +12,7 @@ export default function useBlogData() {
               author
               title
               cake_type
-              hero_image {
+              hero_img {
                 childImageSharp {
                   fluid(maxWidth: 800) {
                     ...GatsbyImageSharpFluid

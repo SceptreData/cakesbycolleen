@@ -775,6 +775,15 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@forestryio/gatsby-remark-normalize-paths@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@forestryio/gatsby-remark-normalize-paths/-/gatsby-remark-normalize-paths-1.0.0.tgz#e48cc7293ef2b8412629ec3c01291be6cb0a6459"
+  integrity sha512-OsJYMhJLv2ojOM0F8v6N82Cgt9RPfKD8dBK/YKM1qry4d4/ycYX4XyLSu1/DdlVgH+YV4XoVr2ZoLTW9mGZv6A==
+  dependencies:
+    is-valid-path "^0.1.1"
+    path "^0.12.7"
+    unist-util-visit "^1.4.0"
+
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.4":
   version "2.0.0-printer-fix.4"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/relay-compiler/-/relay-compiler-2.0.0-printer-fix.4.tgz#4b06aeb4f2ceea5878b5832a2ced1bff9abb62bd"
