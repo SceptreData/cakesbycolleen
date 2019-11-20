@@ -3,6 +3,7 @@ const infoData = require("./content/data/info.json")
 
 module.exports = {
   //this makes the site config available to forestry cms
+  // pathPrefix: process.env.PATH_PREFIX || "/",
   siteMetadata: {
     title: config.title,
     description: config.description,
@@ -16,31 +17,44 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "uploads",
+        path: `${__dirname}/content/uploads`,
+      },
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          "gatsby-remark-relative-images",
+          //   options: { pathFields: ["image", "cover"] }, //   resolve: "gatsby-remark-normalize-paths", // { // "gatsby-remark-relative-images",
+          // },
           {
-            resolve: "gatsby-remark-normalize-paths",
-            options: { pathFields: ["image", "cover"] },
+            resolve: `@forestryio/gatsby-remark-normalize-paths`,
+            options: { pathFields: ["image", "cover", "hero_image"] },
           },
+          // `gatsby-remark-relative-images`,
           {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1000,
-              linkImagesToOriginal: true,
+            },
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: "content/uploads",
             },
           },
         ],
       },
     },
-    "gatsby-plugin-react-helmet",
 
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: "uploads",
-        path: `${__dirname}/content/uploads`,
+        name: "src",
+        path: `${__dirname}/src/`,
       },
     },
 
@@ -49,13 +63,6 @@ module.exports = {
       options: {
         name: "posts",
         path: `${__dirname}/content/posts`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: `${__dirname}/src/pages`,
       },
     },
 
@@ -69,22 +76,12 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "src",
-        path: `${__dirname}/src/`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
         path: `${__dirname}/src/img`,
+        name: "images",
       },
     },
 
     "gatsby-plugin-sass",
-    "gatsby-transformer-yaml",
-    // `gatsby-plugin-catch-links`,
-
     {
       resolve: `gatsby-plugin-sass-resources`,
       options: {
@@ -142,12 +139,15 @@ module.exports = {
         start_url: `/`,
         background_color: `#f7fafc`,
         theme_color: `#f687b3`,
-        icon: `src/img/birthday-cake.png`,
+        // icon: `src/img/birthday-cake.png`,
         display: `standalone`,
         theme_color_in_head: false, // This will avoid adding theme-color meta tag
       },
     },
     `gatsby-plugin-sitemap`,
-    "gatsby-plugin-offline",
+    "gatsby-plugin-react-helmet",
+    "gatsby-transformer-yaml",
+    // `gatsby-plugin-catch-links`,
+    // "gatsby-plugin-offline",
   ],
 }
