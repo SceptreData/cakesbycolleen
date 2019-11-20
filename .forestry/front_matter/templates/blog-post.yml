@@ -35,6 +35,7 @@ fields:
   description: Enter hero image for blog post here
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 pages:
+- content/posts/test-cake.md
+- content/posts/when-hockey-meets-cake.md
 - content/posts/david-s-first-test-post.md
 - content/posts/ah-a-new-blog-post-wonderful.md
-- content/posts/when-hockey-meets-cake.md
