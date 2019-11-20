@@ -1,12 +1,11 @@
 {
-  "description": "<p>This blog was created using <a href=\"https://forestry.io/\" title=\"Forestry Link\">Forestry</a> &amp; <a href=\"https://www.gatsbyjs.org/\" title=\"Gatsby Link\">Gatsby</a></p>",
-  "cta": "<p>Lets make some cakes!</p>",
+  "description": "Amazing cakes, made <i>right</i> here in Edmonton.",
+  "cta": "Make your next event special. Get in touch today!",
   "contact": {
-    "email": "info@forestry.io",
-    "twitter_handle": "forestryio",
-    "github_handle": "forestryio",
-    "twitter_id": "",
-    "instagram_id": ""
+    "email": "Coll.hum@hotmail.co.uk",
+    "twitter_handle": "SceptreData",
+    "facebook_id": "cakesbycolleen2",
+    "instagram_id": "cakesbycolleen"
   },
-  "background_color": "#B1BCBC"
+  "background_color": "#f7fafc"
 }

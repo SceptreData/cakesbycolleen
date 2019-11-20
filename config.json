@@ -1,5 +1,8 @@
 {
-  "title": "Cakes by Colleen 2019",
-  "description": "Gatsby Theme for Cakes by Colleen - Made by David Bergeron",
-  "repository_url": "https://github.com/kendallstrautman/starter-blog-gatsby"
+  "title": "Cakes by Colleen",
+  "description": "Edmonton based chef, specializing in custom cakes and desserts for all occasions, from everyday to the Big Day.",
+  "repository_url": "https://github.com/SceptreData/cakesbycolleen",
+  "about": "Colleen <WENT TO SCHOOL FOR CAKES> Come learn about the cakes.",
+  "contact": "NOT_FILLED_IN_YET",
+  "primaryColor": "#f687b3"
 }

@@ -1,8 +1,10 @@
 body {
   font-family: $font__main;
+  color: $color__main;
+  background-color: $color__bg;
+  background-image: $pattern__bg;
+  font-size: 112.5%;
   overflow-x: hidden;
-  color: $gray-800;
-  font-size: 16px;
 }
 
 a {
@@ -28,32 +30,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-  font-weight: 300;
+  font-weight: $font__heading--weight;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: -1px;
   line-height: $font__line-height-heading;
 }
 
+
 h2 {
-  font-size: 1.7rem;
+  font-size: 2.441rem;
   letter-spacing: -.75px;
   line-height: 1.2;
 }
 
 h3 {
-  font-size: 1.2rem;
+  color: $color__subheading;
+  font-family: $font__main;
+  font-weight: 700;
+  font-size: 1.125rem;
   letter-spacing: -.5px;
   line-height: $font__line-height-heading;
-  color: #A0A0A0;
-  font-weight: normal;
 }
 
 p {
-  font-size: 1.2rem;
-  letter-spacing: -.5px;
+  font-weight: $font__main--weight;
+  // letter-spacing: -.5px;
   line-height: $font__line-height-body
 }
 
@@ -82,7 +86,7 @@ p {
   h3 {
     letter-spacing: -.5px;
     line-height: 1.1875;
-    color: #A0A0A0;
+    color: $color__subheading;
     font-weight: normal;
   }
 
