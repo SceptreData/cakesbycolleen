@@ -14,8 +14,6 @@ module.exports = {
     infoData: infoData,
   },
   plugins: [
-    "gatsby-transformer-yaml",
-    "gatsby-transformer-remark",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,7 +21,6 @@ module.exports = {
         path: `${__dirname}/content/uploads`,
       },
     },
-    // `gatsby-transformer-remark`,
 
     {
       resolve: "gatsby-source-filesystem",
@@ -31,6 +28,39 @@ module.exports = {
         path: `${__dirname}/content/posts`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          //   options: { pathFields: ["image", "cover"] }, //   resolve: "gatsby-remark-normalize-paths", // { // "gatsby-remark-relative-images",
+          // },
+          // `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-relative-source`,
+            options: {
+              name: `uploads`,
+            },
+          },
+          // {
+          //   resolve: `gatsby-remark-normalize-paths`,
+          //   options: { pathFields: ["hero_img"] },
+          // },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1000,
+              linkImagesToOriginal: false,
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
+        ],
+      },
+    },
+    "gatsby-transformer-yaml",
+
+    // `gatsby-transformer-remark`,
 
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
@@ -56,27 +86,6 @@ module.exports = {
         path: `${__dirname}/content/data`,
       },
     },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          //   options: { pathFields: ["image", "cover"] }, //   resolve: "gatsby-remark-normalize-paths", // { // "gatsby-remark-relative-images",
-          // },
-          `gatsby-remark-relative-images`,
-          `gatsby-remark-normalize-paths`,
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 1000,
-              linkImagesToOriginal: false,
-            },
-          },
-          `gatsby-remark-copy-linked-files`,
-        ],
-      },
-    },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
 
     // {
     //   resolve: "gatsby-source-filesystem",

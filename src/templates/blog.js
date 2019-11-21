@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
 import blogTemplateStyles from "../styles/templates/blog.module.scss"
 import Img from "gatsby-image"
+import Image from "../components/image"
 
 export default function Blog(props) {
   const data = props.data.markdownRemark
@@ -26,10 +27,7 @@ export default function Blog(props) {
     <Layout>
       <article className={blogTemplateStyles.blog}>
         <figure className={blogTemplateStyles.blog__hero}>
-          <Img
-            fluid={data.frontmatter.hero_img.childImageSharp.fluid}
-            alt={data.frontmatter.title}
-          />
+          <Image name={data.frontmatter.hero_img} />
         </figure>
         <div className={blogTemplateStyles.blog__info}>
           <h1>{data.frontmatter.title}</h1>
@@ -75,13 +73,7 @@ export const getPostData = graphql`
         title
         author
         date(formatString: "MMMM Do, YYYY")
-        hero_img {
-          childImageSharp {
-            fluid(maxWidth: 1500) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        hero_img
       }
       html
     }

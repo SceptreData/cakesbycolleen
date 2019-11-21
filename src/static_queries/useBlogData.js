@@ -12,13 +12,14 @@ export default function useBlogData() {
               author
               title
               cake_type
-              hero_img {
-                childImageSharp {
-                  fluid(maxWidth: 800) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
+              hero_img
+              # hero_img {
+              #   childImageSharp {
+              #     fluid(maxWidth: 800) {
+              #       ...GatsbyImageSharpFluid
+              #     }
+              #   }
+              # }
             }
             excerpt(pruneLength: 200)
             fields {
