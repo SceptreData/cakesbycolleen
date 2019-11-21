@@ -5,6 +5,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
   // Transform the new node here and create a new node or
   // create a new node field.
   const { createNodeField } = actions
+  fmImagesToRelative(node)
 
   // Convert frontmatter image paths to relative paths
 
