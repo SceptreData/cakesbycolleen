@@ -18,7 +18,6 @@ export default function useBlogData() {
                     ...GatsbyImageSharpFluid
                   }
                 }
-                publicURL
               }
             }
             excerpt(pruneLength: 200)

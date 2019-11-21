@@ -7,9 +7,10 @@ module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
   // Convert frontmatter image paths to relative paths
-  fmImagesToRelative(node)
 
   if (node.internal.type === "MarkdownRemark") {
+    // fmImagesToRelative(node)
+    console.log(node.fileAbsolutePath)
     const slug = path.basename(node.fileAbsolutePath, ".md")
     createNodeField({
       //same as node: node

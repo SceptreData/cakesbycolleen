@@ -15,25 +15,35 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-sharp`,
+      options: { defaultQuality: 75 },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
+    "gatsby-transformer-yaml",
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "uploads",
+        name: "images",
         path: `${__dirname}/content/uploads`,
       },
     },
-    { resolve: `gatsby-plugin-sharp`, options: { defaultQuality: 75 } },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: `${__dirname}/content/posts`,
+      },
+    },
+
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           //   options: { pathFields: ["image", "cover"] }, //   resolve: "gatsby-remark-normalize-paths", // { // "gatsby-remark-relative-images",
           // },
-          `gatsby-remark-relative-images`,
-          {
-            resolve: `gatsby-remark-normalize-paths`,
-            options: { pathFields: ["image", "cover"] },
-          },
+          // `gatsby-remark-relative-images`,
+          `gatsby-remark-normalize-paths`,
           {
             resolve: "gatsby-remark-images",
             options: {
@@ -53,21 +63,12 @@ module.exports = {
         resources: [`${__dirname}/src/styles/_vars.scss`],
       },
     },
-    "gatsby-transformer-yaml",
 
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "src",
         path: `${__dirname}/src/`,
-      },
-    },
-
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "posts",
-        path: `${__dirname}/content/posts`,
       },
     },
 
