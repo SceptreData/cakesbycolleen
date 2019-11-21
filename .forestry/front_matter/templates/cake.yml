@@ -24,3 +24,9 @@ fields:
       format: markdown
   label: Cake Description
   description: Tell us a little bit about the cake
+- name: cake_pic
+  type: file
+  config:
+    maxSize: 250
+  label: Cake Pic
+  description: It's a cake
